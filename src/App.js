@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import Title from "./components/Title";
 import Randomizer from "./components/Randomizer";
+import RestaurantList from "./components/RestaurantList";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
             subtitle="The app that makes it easy to pick a restaurant!"
           />
           <Randomizer />
+          <RestaurantList />
         </main>
       </header>
     </div>
