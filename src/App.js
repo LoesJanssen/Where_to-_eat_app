@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import Title from "./components/Title";
+import Randomizer from "./components/Randomizer";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
             content="Where to Eat"
             subtitle="The app that makes it easy to pick a restaurant!"
           />
+          <Randomizer />
         </main>
       </header>
     </div>
