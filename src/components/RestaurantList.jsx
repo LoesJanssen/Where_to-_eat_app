@@ -22,18 +22,27 @@ export default class RestaurantList extends Component {
         this.setState({
           restaurant: {
             name: firstRestaurant.name,
-            url: firstRestaurant.url,
-            location: firstRestaurant.location
+            url: firstRestaurant.url
           }
         });
+        console.log(this.state.restaurant);
+        return this.state.restaurant;
       });
   };
 
   render() {
-    console.log(this.state.restaurant);
     return (
       <div>
-        <button onClick={this.getRandomRestaurant}>Get me a restaurant</button>
+        <button onClick={this.getRandomRestaurant}>Get me a restaurant!</button>
+        <p>{this.state.restaurant.name}</p>
+        {/* <a href={this.state.restaurant.url}>See website restaurant</a> */}
+        <a
+          style={{ display: "table-cell" }}
+          href={this.state.restaurant.url}
+          target="_blank"
+        >
+          See website restaurant {/*willen we weg*/}
+        </a>
       </div>
     );
   }
