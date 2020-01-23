@@ -3,7 +3,6 @@ import Logo_WTE from "./Logo_WTE.png";
 
 export default class Title extends Component {
   render() {
-    console.log(this.props);
     return (
       <div>
         <img

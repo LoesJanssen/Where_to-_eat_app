@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import Title from "./Title";
 
 export default class RestaurantList extends Component {
   state = {
@@ -33,16 +35,25 @@ export default class RestaurantList extends Component {
   render() {
     return (
       <div>
+        <Title
+          content="Where to Eat"
+          subtitle="Let us choose your restaurant"
+        />
+
+        {/* <Link to="/">Back home</Link> */}
         <button onClick={this.getRandomRestaurant}>Get me a restaurant!</button>
         <p>{this.state.restaurant.name}</p>
-        {/* <a href={this.state.restaurant.url}>See website restaurant</a> */}
-        <a
-          style={{ display: "table-cell" }}
-          href={this.state.restaurant.url}
-          target="_blank"
-        >
-          See website restaurant {/*willen we weg*/}
-        </a>
+        {this.state.restaurant.url && (
+          <a
+            href={this.state.restaurant.url}
+            style={{ display: "table-cell" }}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {" "}
+            Go to website of your restaurant!{" "}
+          </a>
+        )}
       </div>
     );
   }
