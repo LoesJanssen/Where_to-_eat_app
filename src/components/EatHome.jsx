@@ -28,6 +28,13 @@ export default class EatHome extends Component {
       });
   };
 
+  renderRecipe(parameter) {
+    return (
+      <li key={parameter}>
+        <Link to={`/eat-at-home/${parameter}`}>{parameter}</Link>
+      </li>
+    );
+  }
   render() {
     const recipes = this.state.recipes;
     return (
@@ -37,9 +44,10 @@ export default class EatHome extends Component {
         <button onClick={this.getRandomRecipe}>Get me a recipe!</button>
 
         <ul>
-          {recipes.map(r => (
-            <li key={r.idMeal}>{r.strMeal}</li>
-          ))}
+          {recipes.map(r => {
+            console.log(r);
+            return this.renderRecipe(r.strMeal);
+          })}
         </ul>
       </div>
     );
